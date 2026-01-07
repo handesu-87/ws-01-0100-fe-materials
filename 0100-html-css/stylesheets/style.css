@@ -1,5 +1,12 @@
 .body {
   background: #fefefe;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background: #f9f9f9;
 }
 
 /*# sourceMappingURL=style.css.map */
