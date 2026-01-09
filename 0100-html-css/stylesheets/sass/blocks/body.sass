@@ -1,14 +1,9 @@
 @use '../shared/_variable.sass' as v
 @use '../shared/_global.sass' as g
-@use './header.sass' as h
-@use './footer.sass' as f
 
-.body
+body
   @extend %font;
   background: v.$background-color;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-
-a
-  text-decoration: none;
+  color: v.$font-color-dark;
+  max-width: v.$max-width;
+  margin: 0 auto;
