@@ -1,2 +1,52 @@
 @use '../shared/_global.sass' as g
 @use '../shared/_variable.sass' as v
+
+.header
+    padding: 16px
+
+.header__inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.header__logo
+    display: flex
+    align-items: center
+    gap: 8px
+
+.header__nav
+    display: flex
+    align-items: center
+
+.header__nav-list
+    display: flex
+
+.header__nav-item
+    margin-right: 16px
+    font-size: 0.75rem
+
+.header__actions
+    display: flex
+    min-width: 240px
+    // aline-items: center
+    justify-content: space-evenly
+
+.header__btn
+    // width: 100%
+    letter-spacing: 1.4px
+    padding: 8px 16px
+    border-radius: 4px
+    font-size: 0.625rem
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    box-shadow: 2px 2px 4px 1px #1e514036
+    transition: background .5s
+
+    &--primary
+      background: v.$primary-color
+      color: #fff
+
+    &--secondary
+      background: v.$secondary-color
+      color: #fff
