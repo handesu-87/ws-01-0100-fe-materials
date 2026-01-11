@@ -1,0 +1,37 @@
+@use '../shared/_global.sass' as g
+@use '../shared/_mixin.sass' as m
+@use '../shared/_variable.sass' as v
+
+.hero
+    text-align: center
+    height: 960px
+    width: 100%
+    display: flex
+    align-items: center
+    position: relative;
+
+.header__inner
+
+
+.hero__title
+    font-size: 6rem
+    span
+        background: v.$bg-gradation
+        -webkit-background-clip: text
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        color: transparent
+
+.hero__lead
+    font-size: 1.5rem
+    margin-top: 32px
+
+.hero__btn
+    @include m.btn
+    width: 360px
+    background: v.$primary-color
+    color: #fff
+    padding: 16px 32px
+    margin-top: 64px
+    border-radius: 8px
+    font-size: 1rem

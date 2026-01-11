@@ -1,8 +1,12 @@
 @use '../shared/_global.sass' as g
+@use '../shared/_mixin.sass' as m
 @use '../shared/_variable.sass' as v
 
 .header
+    width: 100%;
     padding: 16px
+    z-index: v.$z-index-public-header
+    position: absolute
 
 .header__inner
     display: flex
@@ -20,9 +24,10 @@
 
 .header__nav-list
     display: flex
+    margin-right: 16px
 
 .header__nav-item
-    margin-right: 16px
+    padding-right: 16px
     font-size: 0.75rem
 
 .header__actions
@@ -33,15 +38,7 @@
 
 .header__btn
     // width: 100%
-    letter-spacing: 1.4px
-    padding: 8px 16px
-    border-radius: 4px
-    font-size: 0.625rem
-    display: inline-flex
-    align-items: center
-    justify-content: center
-    box-shadow: 2px 2px 4px 1px #1e514036
-    transition: background .5s
+    @include m.btn
 
     &--primary
       background: v.$primary-color
