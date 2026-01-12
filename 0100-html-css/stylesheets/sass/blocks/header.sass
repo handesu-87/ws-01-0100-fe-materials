@@ -17,33 +17,49 @@
     display: flex
     align-items: center
     gap: 8px
+    &:hover
+        opacity: 0.8
+    &-text
+        font-size: 0.875rem
 
 .header__nav
     display: flex
     align-items: center
 
+
 .header__nav-list
     display: flex
     margin-right: 16px
+    @include m.mobile
+        display: none
 
 .header__nav-item
     padding-right: 16px
     font-size: 0.75rem
+    &:hover
+        color: v.$primary-color-darker
+
+.header__github
+    &:hover
+        color: v.$primary-color-darker
 
 .header__actions
     display: flex
     min-width: 240px
     // aline-items: center
-    justify-content: space-evenly
+    justify-content: flex-end
+    gap: 16px
 
 .header__btn
     // width: 100%
-    @include m.btn
+    @include m.btn($fs:0.625rem)
 
     &--primary
       background: v.$primary-color
-      color: #fff
+      &:hover
+          background: v.$primary-color-darker
 
     &--secondary
       background: v.$secondary-color
-      color: #fff
+      &:hover
+          opacity: 0.8

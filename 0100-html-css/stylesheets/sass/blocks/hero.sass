@@ -8,13 +8,25 @@
     width: 100%
     display: flex
     align-items: center
-    position: relative;
+    position: relative
 
-.header__inner
+    @include m.tablet
+        padding: 16px
+
+    @include m.mobile
+        height: 640px
 
 
 .hero__title
     font-size: 6rem
+    line-height: 1.20
+
+    @include m.tablet
+        font-size: 3rem
+
+    @include m.mobile
+        font-size: 2.5rem
+
     span
         background: v.$bg-gradation
         -webkit-background-clip: text
@@ -25,13 +37,8 @@
 .hero__lead
     font-size: 1.5rem
     margin-top: 32px
+    @include m.mobile
+        font-size: 1rem
 
 .hero__btn
-    @include m.btn
-    width: 360px
-    background: v.$primary-color
-    color: #fff
-    padding: 16px 32px
-    margin-top: 64px
-    border-radius: 8px
-    font-size: 1rem
+    @include m.cta

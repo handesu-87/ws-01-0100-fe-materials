@@ -2,4 +2,34 @@
 @use '../shared/_global.sass' as g
 
 .footer
-  background: #f9f9f9;
+    background: v.$bg-color-light-2
+    width: 100%
+
+.footer__inner
+    display: flex
+    justify-content: space-evenly
+    width: 100%
+    max-width: 1920px
+    margin: 0 auto
+    padding: 64px 128px
+
+.footer__left
+    margin-right: auto
+
+.footer__logo
+    font-size: 1.5rem
+    font-weight: bold
+    letter-spacing: 4px
+    margin-bottom: 32px
+
+.footer__menu
+    display: flex
+    gap: 64px
+
+.footer__menu-title
+    font-size: 1.17rem
+    font-weight: bold
+    margin-bottom: 32px
+
+.footer__menu-item
+    margin-bottom: 16px
