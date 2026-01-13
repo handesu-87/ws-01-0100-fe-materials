@@ -251,6 +251,11 @@ h2 {
   height: 100%;
   z-index: -1;
 }
+@media (max-width: 768px) {
+  .bg-shape {
+    display: none;
+  }
+}
 .bg-shape--donut {
   position: absolute;
   pointer-events: none;
@@ -328,6 +333,7 @@ h2 {
   justify-content: center;
   border-radius: 4px;
   font-size: 0.625rem;
+  font-weight: bold;
   letter-spacing: 1.4px;
   color: #fff;
   box-shadow: 2px 2px 4px 1px rgba(34, 34, 34, 0.1254901961);
@@ -417,6 +423,7 @@ h2 {
   justify-content: center;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: bold;
   letter-spacing: 1.4px;
   color: #fff;
   box-shadow: 2px 2px 4px 1px rgba(34, 34, 34, 0.1254901961);
@@ -424,6 +431,7 @@ h2 {
   width: 360px;
   background: #42b883;
   margin-top: 64px;
+  font-weight: normal;
 }
 .hero__btn:hover {
   background: #0d864f;
@@ -546,6 +554,7 @@ h2 {
   justify-content: center;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: bold;
   letter-spacing: 1.4px;
   color: #fff;
   box-shadow: 2px 2px 4px 1px rgba(34, 34, 34, 0.1254901961);
@@ -553,6 +562,7 @@ h2 {
   width: 360px;
   background: #42b883;
   margin-top: 64px;
+  font-weight: normal;
 }
 .review__cta:hover {
   background: #0d864f;
