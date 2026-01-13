@@ -3,63 +3,62 @@
 @use '../shared/_variable.sass' as v
 
 .header
-    width: 100%;
+    width: 100%
     padding: 16px
     z-index: v.$z-index-public-header
     position: absolute
 
-.header__inner
-    display: flex
-    align-items: center
-    justify-content: space-between
+    &__inner
+        display: flex
+        align-items: center
+        justify-content: space-between
 
-.header__logo
-    display: flex
-    align-items: center
-    gap: 8px
-    &:hover
-        opacity: 0.8
-    &-text
-        font-size: 0.875rem
+    &__logo
+        display: flex
+        align-items: center
+        gap: 8px
+        &:hover
+            opacity: 0.8
+        &-text
+            font-size: 0.875rem
 
-.header__nav
-    display: flex
-    align-items: center
+    &__nav
+        display: flex
+        align-items: center
 
+        &-list
+            display: flex
+            margin-right: 16px
+            @include m.mobile
+                display: none
 
-.header__nav-list
-    display: flex
-    margin-right: 16px
-    @include m.mobile
-        display: none
+        &-item
+            padding-right: 16px
+            font-size: 0.75rem
+            &:hover
+                color: v.$primary-color-darker
 
-.header__nav-item
-    padding-right: 16px
-    font-size: 0.75rem
-    &:hover
-        color: v.$primary-color-darker
+    &__github
+        &:hover
+            color: v.$primary-color-darker
 
-.header__github
-    &:hover
-        color: v.$primary-color-darker
+    &__actions
+        display: flex
+        min-width: 240px
+        // aline-items: center
+        justify-content: flex-end
+        gap: 16px
 
-.header__actions
-    display: flex
-    min-width: 240px
-    // aline-items: center
-    justify-content: flex-end
-    gap: 16px
+    &__btn
+        // width: 100%
+        @include m.btn($fs:0.625rem)
 
-.header__btn
-    // width: 100%
-    @include m.btn($fs:0.625rem)
+        &--primary
+            background: v.$primary-color
+            &:hover
+                background: v.$primary-color-darker
 
-    &--primary
-      background: v.$primary-color
-      &:hover
-          background: v.$primary-color-darker
-
-    &--secondary
-      background: v.$secondary-color
-      &:hover
-          opacity: 0.8
+        &--secondary
+            background: v.$secondary-color
+            &:hover
+                opacity: 0.8

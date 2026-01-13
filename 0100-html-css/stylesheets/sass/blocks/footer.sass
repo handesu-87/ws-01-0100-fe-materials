@@ -1,35 +1,51 @@
-@use '../shared/_variable.sass' as v
 @use '../shared/_global.sass' as g
+@use '../shared/_mixin.sass' as m
+@use '../shared/_variable.sass' as v
 
 .footer
     background: v.$bg-color-light-2
     width: 100%
 
-.footer__inner
-    display: flex
-    justify-content: space-evenly
-    width: 100%
-    max-width: 1920px
-    margin: 0 auto
-    padding: 64px 128px
+    &__inner
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        width: 100%
+        max-width: 1920px
+        margin: 0 auto
+        padding: 64px 128px
+        @include m.tablet
+            justify-content: flex-start
+        @include m.mobile
+            padding: 32px 64px
 
-.footer__left
-    margin-right: auto
+    &__left
+        margin-right: auto
+        @include m.tablet
+            margin-bottom: 32px
 
-.footer__logo
-    font-size: 1.5rem
-    font-weight: bold
-    letter-spacing: 4px
-    margin-bottom: 32px
+    &__logo
+        font-size: 1.5rem
+        font-weight: bold
+        letter-spacing: 4px
+        margin-bottom: 32px
 
-.footer__menu
-    display: flex
-    gap: 64px
+    &__menu
+        display: flex
+        gap: 64px
+        flex-wrap: wrap
+        @include m.mobile
+            flex-direction: column
+            gap: 16px
 
-.footer__menu-title
-    font-size: 1.17rem
-    font-weight: bold
-    margin-bottom: 32px
+        &-title
+            font-size: 1.17rem
+            font-weight: bold
+            margin-bottom: 32px
+            @include m.mobile
+                margin-bottom: 16px
 
-.footer__menu-item
-    margin-bottom: 16px
+        &-item
+            margin-bottom: 16px
+            @include m.mobile
+                margin-bottom: 12px

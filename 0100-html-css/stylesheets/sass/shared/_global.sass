@@ -1,23 +1,28 @@
 @use '../shared/_variable' as v
 @use '../shared/_mixin' as m
 
-%font
+body
+  height: 100%
   text-decoration: none
   color: v.$font-color-dark
-  font-family: "Inter", "Hiragino Kaku Gothic ProN", sans-serif
+  font-family: "Inter", "Hiragino Kaku Gothic ProN", monospace
   font-weight: normal
   font-style: normal
   line-height: 1.5
-
-h1
-  font-weight: bold
-
-
-h2
-  font-weight: bold
-  text-align: center
-  font-size: 1.125rem
+  max-width: v.$max-width
+  background: v.$background-color
+  color: v.$font-color-dark
+  position: relative
+  overflow: auto
 
 main
   max-width: 1200px
   margin: 0 auto
+
+h1
+  font-weight: bold
+
+h2
+  font-weight: bold
+  font-size: 1.125rem
+  text-align: center

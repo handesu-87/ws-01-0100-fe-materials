@@ -17,28 +17,43 @@
         height: 640px
 
 
-.hero__title
-    font-size: 6rem
-    line-height: 1.20
+    &__title
+        font-size: 6rem
+        line-height: 1.20
+        position: relative
+        overflow: hidden
+        mix-blend-mode: multiply
 
-    @include m.tablet
-        font-size: 3rem
+        @include m.tablet
+            font-size: 3rem
 
-    @include m.mobile
-        font-size: 2.5rem
+        @include m.mobile
+            font-size: 2.5rem
 
-    span
-        background: v.$bg-gradation
-        -webkit-background-clip: text
-        background-clip: text
-        -webkit-text-fill-color: transparent
-        color: transparent
+        span
+            background: v.$bg-gradation
+            -webkit-background-clip: text
+            background-clip: text
+            -webkit-text-fill-color: transparent
+            color: transparent
 
-.hero__lead
-    font-size: 1.5rem
-    margin-top: 32px
-    @include m.mobile
-        font-size: 1rem
+        //typeWriter
+        &::after
+            content: "|"
+            color: v.$font-color-dark
+            animation: blink 1s infinite
 
-.hero__btn
-    @include m.cta
+    @keyframes blink
+        0%, 100%
+            opacity: 1
+        50%
+            opacity: 0
+
+    &__lead
+        font-size: 1.5rem
+        margin-top: 32px
+        @include m.mobile
+            font-size: 1rem
+
+    &__btn
+        @include m.cta

@@ -13,6 +13,21 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
   </head>
   <body>
+    <div class="bg-shape">
+      <div
+        class="bg-shape--donut"
+        style="--bg: #2ed9ff; --top: 100px; --right: -240px"
+      >
+        <div class="bg-shape__inner"></div>
+      </div>
+      <div
+        class="bg-shape--donut"
+        style="--bg: #4bcaa0; --top: 500px; --left: -240px"
+      >
+        <div class="bg-shape__inner"></div>
+      </div>
+    </div>
+
     <header class="header">
       <div class="header__inner">
         <a href="" class="header__logo">
@@ -110,19 +125,19 @@
               お待ちしております。
             </p>
 
-            <div>
-              <span>Free</span>
-              <p>円 / 月</p>
+            <div class="card__price">
+              <span class="card__price-value">Free</span>
+              <p class="card__price-unit">円 / 月</p>
             </div>
-            <div>
-              <div class="index-module__vBJxWW__container">
+            <div class="card__features">
+              <div class="card__feature">
                 <svg
+                  class="card__feature-icon"
                   stroke="currentColor"
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 512 512"
                   color="#4BCAA0"
-                  style="color: #4bcaa0"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,17 +151,17 @@
                   ></path>
                 </svg>
               </div>
-              <p>3つまでプロジェクトを管理可能</p>
+              <p class="card__feature-text">3つまでプロジェクトを管理可能</p>
             </div>
-            <div>
-              <div class="index-module__vBJxWW__container">
+            <div class="card__features">
+              <div class="card__feature">
                 <svg
+                  class="card__feature-icon"
                   stroke="currentColor"
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 512 512"
                   color="#4BCAA0"
-                  style="color: #4bcaa0"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,17 +175,19 @@
                   ></path>
                 </svg>
               </div>
-              <p>ダッシュボード機能を無制限 に利用可能</p>
+              <p class="card__feature-text">
+                ダッシュボード機能を無制限 に利用可能
+              </p>
             </div>
-            <div>
-              <div class="index-module__vBJxWW__container">
+            <div class="card__features">
+              <div class="card__feature">
                 <svg
+                  class="card__feature-icon"
                   stroke="currentColor"
                   fill="currentColor"
                   stroke-width="0"
                   viewBox="0 0 512 512"
                   color="#4BCAA0"
-                  style="color: #4bcaa0"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -184,119 +201,320 @@
                   ></path>
                 </svg>
               </div>
-              <p>無料の範囲内でのテーマの選択・ 変更可能</p>
+              <p class="card__feature-text">
+                無料の範囲内でのテーマの選択・ 変更可能
+              </p>
             </div>
-            <div>
-              <div class="index-module__vBJxWW__container">
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 512 512"
-                  color="#4BCAA0"
-                  style="color: #4bcaa0"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="32"
-                    d="M416 128 192 384l-96-96"
-                  ></path>
-                </svg>
-              </div>
-              <p>デフォルトのリマインダの利用 可能</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">デフォルトのリマインダの利用可能</p>
             </div>
-            <div>
-              <div class="index-module__vBJxWW__container">
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 512 512"
-                  color="#4BCAA0"
-                  style="color: #4bcaa0"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="32"
-                    d="M416 128 192 384l-96-96"
-                  ></path>
-                </svg>
-              </div>
-              <p>一部のWeb API の利用可能</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">一部のWeb API の利用可能</p>
             </div>
           </div>
           <div class="price__card">
-            <div>Professional</div>
-            <div>
+            <h3 class="card__title">Professional</h3>
+            <p class="card__desc">
               多くのプロジェクトを管理したくなったら Professional
               プランにアップグレードして Turvo の機能を使い切りましょう
-            </div>
+            </p>
 
-            <div>
-              <span>980</span>
-              <p>円 / 月</p>
+            <div class="card__price">
+              <span class="card__price-value">980</span>
+              <p class="card__price-unit">円 / 月</p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>無制限にプロジェクトを管理可能</p>
+            <div class="card__features">
+              <div class="card__feature">
+                <svg
+                  class="card__feature-icon"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  color="#4BCAA0"
+                  style="color: #4bcaa0"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M416 128 192 384l-96-96"
+                  ></path>
+                </svg>
+              </div>
+              <p class="card__feature-text">無制限にプロジェクトを管理可能</p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>ダッシュボード機能を無制限 に利用可能</p>
+            <div class="card__features">
+              <div class="card__feature">
+                <svg
+                  class="card__feature-icon"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  color="#4BCAA0"
+                  style="color: #4bcaa0"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M416 128 192 384l-96-96"
+                  ></path>
+                </svg>
+              </div>
+              <p class="card__feature-text">
+                ダッシュボード機能を無制限 に利用可能
+              </p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>無制限でテーマの選択・変更可能</p>
+            <div class="card__features">
+              <div class="card__feature">
+                <svg
+                  class="card__feature-icon"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  color="#4BCAA0"
+                  style="color: #4bcaa0"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M416 128 192 384l-96-96"
+                  ></path>
+                </svg>
+              </div>
+              <p class="card__feature-text">無制限でテーマの選択・変更可能</p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>リマインダ・カスタマイズ機能 使用可</p>
+            <div class="card__features">
+              <div class="card__feature">
+                <svg
+                  class="card__feature-icon"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  color="#4BCAA0"
+                  style="color: #4bcaa0"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M416 128 192 384l-96-96"
+                  ></path>
+                </svg>
+              </div>
+              <p class="card__feature-text">
+                リマインダ・カスタマイズ機能 使用可
+              </p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>一部のWeb API の利用可能</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                style="color: #4bcaa0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">一部のWeb API の利用可能</p>
             </div>
           </div>
           <div class="price__card">
-            <div>Premium</div>
-            <div>
+            <h3 class="card__title">Premium</h3>
+            <p class="card__desc">
               Professionalプランの機能に加えて Web APIが利用可能でタスク管理を
               自分なりにカスタマイズしてさらなる 効率化を目指しましょう。
-            </div>
+            </p>
 
-            <div>
-              <span>1,980</span>
-              <p>円 / 月</p>
+            <div class="card__price">
+              <span class="card__price-value">1,980</span>
+              <p class="card__price-unit">円 / 月</p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>無制限にプロジェクトを管理可能</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">3つまでプロジェクトを管理可能</p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>ダッシュボード機能を無制限 に利用可能</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">
+                ダッシュボード機能を無制限 に利用可能
+              </p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>無制限でテーマの選択・変更可能</p>
+            <div class="card__features">
+              <div class="card__feature">
+                <svg
+                  class="card__feature-icon"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  color="#4BCAA0"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M416 128 192 384l-96-96"
+                  ></path>
+                </svg>
+              </div>
+              <p class="card__feature-text">
+                無料の範囲内でのテーマの選択・ 変更可能
+              </p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>リマインダ・カスタマイズ機能 使用可</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">デフォルトのリマインダの利用可能</p>
             </div>
-            <div>
-              <div>icon</div>
-              <p>全てのWeb API の利用可能</p>
+            <div class="card__features">
+              <svg
+                class="card__feature-icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                color="#4BCAA0"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M416 128 192 384l-96-96"
+                ></path>
+              </svg>
+              <p class="card__feature-text">全てのWeb API の利用可能</p>
             </div>
           </div>
         </div>
@@ -409,5 +627,6 @@
       </div>
     </footer>
     <!-- ./footer -->
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>

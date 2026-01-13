@@ -1,0 +1,27 @@
+@use '../shared/_variable.sass' as v
+@use '../shared/_global.sass' as g
+
+.bg-shape
+    position: fixed
+    overflow: hidden
+    width: 100%
+    height: 100%
+    z-index: -1
+
+    &--donut
+        position: absolute
+        pointer-events: none
+        top: var(--top, auto)
+        right: var(--right, auto)
+        bottom: var(--bottom, auto)
+        left: var(--left, auto)
+        width: 420px
+        height: 420px
+        border-radius: 50%
+        background: var(--bg, #2ed9ff)
+
+    &__inner
+        position: absolute
+        inset: 100px
+        border-radius: 50%
+        background: v.$background-color
