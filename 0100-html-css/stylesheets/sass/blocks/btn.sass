@@ -26,7 +26,6 @@
             opacity: 0.8
 
     &--cta
-        letter-spacing: 0
         padding: 16px 32px
         border-radius: 8px
         width: 360px
@@ -36,6 +35,5 @@
         font-weight: normal
         &:hover
             background: v.$primary-color-darker
-
-    @include m.mobile
-        width: clamp(12.5rem, 2.958rem + 43.712vw, 22.5rem)
+        @include m.mobile
+            width: clamp(12.5rem, 2.958rem + 43.712vw, 22.5rem)
