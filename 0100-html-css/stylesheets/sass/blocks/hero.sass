@@ -8,6 +8,7 @@
     width: 100%
     display: flex
     align-items: center
+    justify-content: center
     position: relative
 
     @include m.tablet
@@ -30,30 +31,63 @@
         @include m.mobile
             font-size: 2.5rem
 
-        span
+        &-gradient
             background: v.$bg-gradation
             -webkit-background-clip: text
             background-clip: text
             -webkit-text-fill-color: transparent
             color: transparent
 
-        //typeWriter
-        &::after
-            content: "|"
-            color: v.$font-color-dark
-            animation: blink 1s infinite
+        &-firstLine
+            text-align: center
+            white-space: nowrap
+            margin: 0 auto
+            display: block
+            overflow: hidden
+            animation: 3s steps(15, end) typing, .5s step-end 6 alternate effect
 
-    @keyframes blink
-        0%, 100%
-            opacity: 1
-        50%
-            opacity: 0
+        &-secondLine
+            text-align: center
+            white-space: nowrap
+            margin: 0 auto
+            display: block
+            overflow: hidden
+            animation: 3s step-end hide, 3s steps(15, end) 3s typing, .5s step-end 3s 6 alternate effect
+
+        @keyframes hide
+            0%
+                width: 0%
+
+        @keyframes typing
+            0%
+                width: 0
+            100%
+                width: 100%
+
+        @keyframes effect
+            50%
+                border-right: 3px solid v.$font-color-dark
 
     &__lead
+        color: v.$top-font-weak-color
         font-size: 1.5rem
         margin-top: 32px
+        animation: 6s step-end showup, 1s 6s fadein
         @include m.mobile
             font-size: 1rem
 
-    &__btn
-        @include m.cta
+.ctaAnimation
+    animation: 6s step-end showup, 1s 6s fadein
+
+//====================================
+// アニメーション
+//====================================
+@keyframes showup
+    0%
+        opacity: 0
+
+@keyframes fadein
+    0%
+        opacity: 0
+    100%
+        opacity: 1

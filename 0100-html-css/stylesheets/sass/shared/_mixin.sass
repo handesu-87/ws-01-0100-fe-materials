@@ -9,36 +9,3 @@
     @media(max-width: 768px)
         @content
 
-// component
-@mixin btn($p: 10px 16px, $br: 4px, $fs: 1rem)
-    padding: $p
-    display: inline-flex
-    align-items: center
-    justify-content: center
-    border-radius: $br
-    font-size: $fs
-    font-weight: bold
-    letter-spacing: 1.4px
-    color: #fff
-    box-shadow: 2px 2px 4px 1px v.$button-shadow
-    transition: background .5s
-
-@mixin cta
-    @include btn(16px 32px, 8px,)
-    width: 360px
-    background: v.$primary-color
-    margin-top: 64px
-    font-weight: normal
-    &:hover
-        background: v.$primary-color-darker
-
-    @include mobile
-        width: clamp(12.5rem, 2.958rem + 43.712vw, 22.5rem)
-
-@mixin card
-    border: 1px solid v.$border-color-light
-    background: v.$background-color
-    border-radius: 8px
-    width: 360px
-    padding: 32px
-    box-shadow: 1px 1px 8px 4px #f9f9f9

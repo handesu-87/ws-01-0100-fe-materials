@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Turbo</title>
+    <title>🚀Turvo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,13 +16,13 @@
     <div class="bg-shape">
       <div
         class="bg-shape--donut"
-        style="--bg: #2ed9ff; --top: 100px; --right: -240px"
+        style="--bg: #2ed9ff; --top: 240px; --right: -240px"
       >
         <div class="bg-shape__inner"></div>
       </div>
       <div
         class="bg-shape--donut"
-        style="--bg: #4bcaa0; --top: 500px; --left: -240px"
+        style="--bg: #4bcaa0; --top: 600px; --left: -240px"
       >
         <div class="bg-shape__inner"></div>
       </div>
@@ -57,10 +57,10 @@
             </svg>
           </a>
           <div class="header__actions">
-            <button href="" class="header__btn header__btn--primary">
+            <button href="" class="btn btn--primary">
               無料で始める
             </button>
-            <button href="" class="header__btn header__btn--secondary">
+            <button href="" class="btn btn--secondary">
               サインイン
             </button>
           </div>
@@ -73,15 +73,17 @@
       <section class="hero">
         <div class="hero__inner">
           <h1 class="hero__title">
-            <span>Transform</span>
-            your tasks into
-            <span>acheivements</span>
+            <span class="hero__title-firstLine">
+              <span class="hero__title-gradient">Transform</span> your tasks
+            </span>
+          <span class="hero__title-secondLine">into
+            <span class="hero__title-gradient">acheivements</span></span>
           </h1>
           <p class="hero__lead">
             TODO app that revolutionizes your life and helps you achieve your
             dreams.
           </p>
-          <button href="" class="hero__btn">無料で始める</button>
+          <button href="" class="btn btn--cta ctaAnimation">無料で始める</button>
         </div>
       </section>
       <!-- ./hero -->
@@ -117,8 +119,8 @@
           ※
           学習用アプリなので、ダミーの料金表です。プランに関する機能は未実装です。
         </p>
-        <div class="price__cards">
-          <div class="price__card card">
+        <div class="cards">
+          <div class="card">
             <h3 class="card__title">Basic</h3>
             <p class="card__desc">
               無料のプランでTurvoを始めよう。 スタートには十分なプランを揃えて
@@ -250,14 +252,14 @@
               <p class="card__feature-text">一部のWeb API の利用可能</p>
             </div>
           </div>
-          <div class="price__card card">
+          <div class="card">
             <h3 class="card__title">Professional</h3>
             <p class="card__desc">
               多くのプロジェクトを管理したくなったら Professional
               プランにアップグレードして Turvo の機能を使い切りましょう
             </p>
 
-            <div class="card__price card">
+            <div class="card__price">
               <span class="card__price-value">980</span>
               <p class="card__price-unit">円 / 月</p>
             </div>
@@ -389,7 +391,7 @@
               <p class="card__feature-text">一部のWeb API の利用可能</p>
             </div>
           </div>
-          <div class="price__card card">
+          <div class="card">
             <h3 class="card__title">Premium</h3>
             <p class="card__desc">
               Professionalプランの機能に加えて Web APIが利用可能でタスク管理を
@@ -575,7 +577,7 @@
             </p>
           </div>
         </div>
-        <a class="review__cta" href="/login">Turvo を始める</a>
+        <a class="btn btn--cta" href="/login">Turvo を始める</a>
       </section>
     </main>
 
@@ -627,6 +629,5 @@
       </div>
     </footer>
     <!-- ./footer -->
-    <!-- <script src="script.js"></script> -->
   </body>
 </html>

@@ -1,0 +1,41 @@
+@use '../shared/_global.sass' as g
+@use '../shared/_mixin.sass' as m
+@use '../shared/_variable.sass' as v
+
+.btn
+    display: inline-flex
+    padding: 8px 16px
+    align-items: center
+    justify-content: center
+    border-radius: 4px
+    font-size: 0.625rem
+    font-weight: bold
+    letter-spacing: 1.4px
+    color: #fff
+    box-shadow: 2px 2px 4px 1px v.$button-shadow
+    transition: background .5s
+
+    &--primary
+        background: v.$primary-color
+        &:hover
+            background: v.$primary-color-darker
+
+    &--secondary
+        background: v.$secondary-color
+        &:hover
+            opacity: 0.8
+
+    &--cta
+        letter-spacing: 0
+        padding: 16px 32px
+        border-radius: 8px
+        width: 360px
+        background: v.$primary-color
+        margin-top: 64px
+        font-size: 1rem
+        font-weight: normal
+        &:hover
+            background: v.$primary-color-darker
+
+    @include m.mobile
+        width: clamp(12.5rem, 2.958rem + 43.712vw, 22.5rem)

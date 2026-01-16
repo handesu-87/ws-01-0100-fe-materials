@@ -1,0 +1,57 @@
+@use '../shared/_global.sass' as g
+@use '../shared/_mixin.sass' as m
+@use '../shared/_variable.sass' as v
+
+.cards
+        margin-top: 128px
+        display: flex
+        gap: 32px
+        justify-content: center
+        flex-wrap: wrap
+
+.card
+    border: 1px solid v.$border-color-light
+    background: v.$background-color
+    border-radius: 8px
+    width: 360px
+    padding: 32px
+    box-shadow: 1px 1px 8px 4px #f9f9f9
+
+    &__title
+        font-weight: bold
+        font-size: 1.125rem
+
+    &__desc
+        width: 240px
+        height: 100px
+        padding: 16px 0
+        font-size: 0.75rem
+
+    &__price
+        &-value
+            font-weight: bold
+            font-size: 4rem
+            background: v.$bg-gradation
+            -webkit-background-clip: text
+            background-clip: text
+            -webkit-text-fill-color: transparent
+            color: transparent
+        &-unit
+            margin-bottom: 20px
+            font-weight: bold
+            font-size: 0.75rem
+
+    &__features
+        display: flex
+        align-items: center
+
+    &__feature
+        &-icon
+            color: #4bcaa0
+            background: #d6f5eb
+            border-radius: 50%
+            width: 16px
+            height: 16px
+
+        &-text
+            padding: 16px
