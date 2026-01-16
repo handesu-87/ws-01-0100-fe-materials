@@ -582,6 +582,7 @@ h2 {
   opacity: 0.8;
 }
 .btn--cta {
+  letter-spacing: 0;
   padding: 16px 32px;
   border-radius: 8px;
   width: 360px;
