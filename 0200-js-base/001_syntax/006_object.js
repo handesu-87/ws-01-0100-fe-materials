@@ -8,6 +8,12 @@
  */
 
 function getPersonObject() {
+  const person = {
+    name: 'Bob',
+    age: 32,
+    gender: 'male'
+  };
+  return person;
 }
 
 /**
@@ -25,6 +31,8 @@ function getPersonObject() {
  */
 
 function keys(obj) {
+  arr = Object.keys(obj);
+  arr.forEach((key) => console.log(key));
 }
 
 /**
@@ -42,6 +50,8 @@ function keys(obj) {
  */
 
 function values(obj) {
+  arr = Object.values(obj);
+  arr.forEach((value) => console.log(value));
 }
 
 /**
@@ -57,6 +67,10 @@ function values(obj) {
  */
 
 function doubleAge(person) {
+  if (person.hasOwnProperty('age')) {
+    person.age += 1;
+  }
+  return person;
 }
 
 /**
@@ -71,6 +85,8 @@ function doubleAge(person) {
  */
 
 function setProcessedFlag(obj) {
+  const newObj = { ...obj, processed: true };
+  return newObj;
 }
 
 /**
@@ -96,6 +112,12 @@ function setProcessedFlag(obj) {
  */
 
 function assignNumber(persons) {
+  const result = {};
+  persons.forEach((name) => {
+    const randomNum = Math.floor(Math.random() * 10) + 1;
+    result[name] = randomNum;
+  });
+  return result;
 }
 
 /**
@@ -109,7 +131,18 @@ function assignNumber(persons) {
  *
  */
 
+// ⭐️⭐️⭐️
 function isDuplicate(array) {
+  const obj = {};
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    if (obj[element]) {
+      return true;
+    } else {
+      obj[element] = true;
+    }
+  }
+  return false;
 }
 
 module.exports = {
