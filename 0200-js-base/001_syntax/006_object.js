@@ -135,11 +135,10 @@ function assignNumber(persons) {
 function isDuplicate(array) {
   const obj = {};
   for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-    if (obj[element]) {
+    if (obj[array[i]]) {
       return true;
     } else {
-      obj[element] = true;
+      obj[array[i]] = true;
     }
   }
   return false;

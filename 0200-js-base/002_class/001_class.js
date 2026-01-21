@@ -22,6 +22,46 @@
  */
 
 class Person {
+  sayHi () {
+    console.log('Hi!!')
+  }
+
+  static describe () {
+    console.log('This is a Person class')
+  }
+
+  name;
+  age;
+  bio;
+
+  constructor (name = '', age = 0, bio = '') {
+    this.name = name
+    this.age = age
+    this.bio = bio
+  }
+
+  get age () {
+    return this._age
+  }
+
+  set age (value) {
+    this._age = value
+  }
+
+  get isUnderage () {
+    if (this.age < 20) {
+      console.log("20歳未満です")
+      return true
+    } else {
+      console.log("20歳以上です")
+      return false
+    }
+  }
+
+  toString () {
+    return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`
+  }
+
 }
 
 function main () {

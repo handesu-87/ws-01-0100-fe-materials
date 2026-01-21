@@ -6,6 +6,22 @@
  */
 
 function filter(array, cb) {
+  // const result = [];
+
+  // for (let i = 0; i < array.length; i++) {
+  //   const value = array[i];
+  //   if (cb(value, i)) {
+  //     result.push(value);
+  //   }
+  // }
+  // return result;
+  const result = [];
+  array.forEach((value, index) => {
+    if (cb(value, index)) {
+      result.push(value);
+    }
+  });
+  return result;
 }
 
 /**
@@ -15,6 +31,20 @@ function filter(array, cb) {
  */
 
 function find(array, cb) {
+  // for (let i = 0; i < array.length; i++) {
+  //   const value = array[i];
+  //   if (cb(value, i)) {
+  //     return value;
+  //   }
+  // }
+  // return undefined;
+  let foundValue = undefined;
+  array.forEach((value, index) => {
+    if (foundValue === undefined && cb(value, index)) {
+      foundValue = value;
+    }
+  });
+  return foundValue;
 }
 
 /**
@@ -24,6 +54,20 @@ function find(array, cb) {
  */
 
 function findIndex(array, cb) {
+  // for (let i = 0; i < array.length; i++) {
+  //   const value = array[i];
+  //   if (cb(value, i)) {
+  //     return i;
+  //   }
+  // }
+  // return -1;
+  let foundIndex = -1;
+  array.forEach((value, index) => {
+    if (foundIndex === -1 && cb(value, index)) {
+      foundIndex = index;
+    }
+  });
+  return foundIndex;
 }
 
 /**
@@ -33,6 +77,20 @@ function findIndex(array, cb) {
  */
 
 function some(array, cb) {
+  // for (let i = 0; i < array.length; i++) {
+  //   const value = array[i];
+  //   if (cb(value, i)) {
+  //     return true;
+  //   }
+  // }
+  // return false;
+  let found = false;
+  array.forEach((value, index) => {
+    if (!found && cb(value, index)) {
+      found = true;
+    }
+  });
+  return found;
 }
 
 /**
@@ -42,6 +100,13 @@ function some(array, cb) {
  */
 
 function every(array, cb) {
+  for (let i = 0; i < array.length; i++) {
+    const value = array[i];
+    if (!cb(value, i)) {
+      return false;
+    }
+  }
+  return true;
 }
 
 /**
@@ -52,6 +117,14 @@ function every(array, cb) {
  */
 
 function map(array, cb) {
+  const result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const value = array[i];
+    const mappedValue = cb(value, i);
+    result.push(mappedValue);
+  }
+  return result;
 }
 
 /**
@@ -62,6 +135,10 @@ function map(array, cb) {
  */
 
 function forEach(array, cb) {
+  for (let i = 0; i < array.length; i++) {
+    const value = array[i];
+    cb(value, i);
+  }
 }
 
 module.exports = {

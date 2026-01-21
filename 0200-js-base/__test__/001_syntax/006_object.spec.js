@@ -174,6 +174,8 @@ describe('isDuplicate', () => {
     expect(isDuplicate([2, 2, 2, 2])).toEqual(true);
     expect(isDuplicate([1, 2, 2, 3])).toEqual(true);
     expect(isDuplicate([1, 2, 3])).toEqual(false);
+    expect(isDuplicate(["a", "a", "b"])).toEqual(true);
+    expect(isDuplicate(["a", "b", "c"])).toEqual(false);
     expect(isDuplicate([])).toEqual(false);
   });
 });
