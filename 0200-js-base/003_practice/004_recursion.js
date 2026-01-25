@@ -16,6 +16,11 @@
  */
 
 function sumSequence (n, sum = 0) {
+  if (n <= 0) {
+    return sum;
+  }
+  sum += n;
+  return sumSequence(n - 1, sum);
 }
 
 /**
@@ -28,7 +33,20 @@ function sumSequence (n, sum = 0) {
  *    input: 10 => [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
  */
 
+// ⭐️⭐️⭐️
 function fibonacci (num) {
+  if (num <= 0) {
+    return [];
+  } else if (num === 1) {
+    return [1];
+  } else if (num === 2) {
+    return [1, 1];
+  } else {
+    const seq = fibonacci(num - 1);
+    const nextValue = seq[seq.length - 1] + seq[seq.length - 2];
+    seq.push(nextValue);
+    return seq;
+  }
 }
 
 /**
@@ -43,6 +61,15 @@ function fibonacci (num) {
  */
 
 function flatten (data) {
+  let result = [];
+  for (const item of data) {
+    if (Array.isArray(item)) {
+      result = result.concat(flatten(item));
+    } else {
+      result.push(item);
+    }
+  }
+  return result;
 }
 
 
@@ -99,6 +126,14 @@ function flatten (data) {
  */
 
 function fileSize (node, sum = 0) {
+  if (node.hasOwnProperty('children')) {
+    for (const child of node.children) {
+      sum = fileSize(child, sum);
+    }
+  } else {
+    sum += node.size;
+  }
+  return sum;
 }
 
 

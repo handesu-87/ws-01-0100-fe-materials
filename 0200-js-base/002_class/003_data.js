@@ -15,7 +15,7 @@ class List {
    * Listクラスのインスタンスを作成する。
    * @constructor
    * @this {List}
-   * @param {Number} array リストのデータ
+   * @param {number[]} array リストのデータ
    */
   constructor(array) {
     this.data = array;
@@ -51,14 +51,17 @@ class List {
   }
 
   /** 与えられた引数により、リストの 要素を削除する
+   * →削除した要素を取得する？？
    *
    * @param {Number} targetIndex
    * @return {Array}
    */
   remove(targetIndex) {
     // TODO:
-    this.data.splice(targetIndex, 1);
-    return this.data;
+    if (targetIndex < 0 || targetIndex >= this.data.length) {
+      return undefined;
+    }
+    return this.data.splice(targetIndex, 1)[0];
   }
 
   /** リストの 末尾の要素を取得する

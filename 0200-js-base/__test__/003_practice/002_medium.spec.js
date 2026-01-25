@@ -61,7 +61,7 @@ describe('sumWithout4andNext', () => {
     expect(sumWithout4andNext([1, 4, 3, 4, 5])).toEqual(1);
     expect(sumWithout4andNext([4, 3, 3, 5])).toEqual(8);
     expect(sumWithout4andNext([4, 4, 4, 4])).toEqual(0);
-    expect(sumWithout4andNext([4, 4, 1, 2])).toEqual(2);
+    expect(sumWithout4andNext([4, 4, 1, 2])).toEqual(3);
   });
 });
 

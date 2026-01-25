@@ -6,6 +6,7 @@
  */
 
 function flatten(list) {
+  return list.flat(2);
 }
 
 /**
@@ -26,6 +27,11 @@ function flatten(list) {
  */
 
 function toMap(list) {
+  const result = {};
+  for (let i = 0; i < list.length; i++) {
+    result[list[i]] = true;
+  }
+  return result;
 }
 
 /**
@@ -38,6 +44,12 @@ function toMap(list) {
  */
 
 function toList(obj) {
+  const result = [];
+  for (const key in obj) {
+    result.push(key);
+    result.push(obj[key]);
+  }
+  return result;
 }
 
 /**
@@ -58,6 +70,11 @@ function toList(obj) {
  */
 
 function ids(obj) {
+  const result = [];
+  for (const item of obj) {
+    result.push(item.id);
+  }
+  return result;
 }
 
 /**
@@ -74,6 +91,9 @@ function ids(obj) {
  */
 
 function merge(a, b) {
+  // ...new Set() で重複を排除しつつ、スプレッド構文で配列に戻す
+  // return [...new Set([...a, ...b])];
+  return Array.from(new Set(a.concat(b)));
 }
 
 /**
@@ -89,6 +109,13 @@ function merge(a, b) {
  */
 
 function intersection(a, b) {
+  const result = [];
+  for (const item of a) {
+    if (b.includes(item)) {
+      result.push(item);
+    }
+  }
+  return result;
 }
 
 /**
@@ -105,6 +132,15 @@ function intersection(a, b) {
  */
 
 function mergeObjOfArray(a, b) {
+  const map = new Map();
+  for (const obj of a.concat(b)) {
+    if (map.has(obj.id)) {
+      Object.assign(map.get(obj.id), obj);
+    } else {
+      map.set(obj.id, { ...obj });
+    }
+  }
+  return Array.from(map.values());
 }
 
 /**
@@ -120,6 +156,20 @@ function mergeObjOfArray(a, b) {
  */
 
 function sum(data) {
+  let result = 0;
+
+  //1回目：dataが配列の場合
+  if (Array.isArray(data)) {
+    for (const v of data) result += sum(v);
+    return result;
+  }
+  //2回目：dataがオブジェクトの場合
+  if (data && typeof data === "object") {
+    if (typeof data.count === "number") result += data.count;
+    for (const key in data) result += sum(data[key]);
+  }
+
+  return result;
 }
 
 module.exports = {

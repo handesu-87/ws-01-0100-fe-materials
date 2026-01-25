@@ -21,6 +21,9 @@
  *
  */
 
+//クラス変数=静的変数(static変数)のこと
+//メンバ変数=インスタンス変数=フィールド変数のこと
+
 class Person {
   sayHi () {
     console.log('Hi!!')

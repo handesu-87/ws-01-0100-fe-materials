@@ -1,3 +1,5 @@
+
+
 /**
  *  文字列のローテート
  *
@@ -10,6 +12,10 @@
  *
  */
 function rotate(str, num) {
+  const len = str.length;
+  const n = ((num % len) + len) % len; // 正のインデックスに変換
+  // slice()...負の値を指定すると文字列の末尾から切り取られる
+  return str.slice(-n) + str.slice(0, len - n);
 }
 
 /**
@@ -23,7 +29,9 @@ function rotate(str, num) {
  *    'banana' => 'bnn'
  *
  */
+// 正規表現を使う！
 function removeVowels(str) {
+  return str.replace(/[aeiouAEIOU]/g, '');
 }
 
 /**
@@ -37,7 +45,24 @@ function removeVowels(str) {
  *    'hogehoage',  'hoge' => 1
  *
  */
+/// ⭐️⭐️⭐️
 function countStr(s1, s2) {
+  let count = 0;
+  const regex = new RegExp(s2, 'g');
+  //空文字の場合0を返す
+  if (s2 === '') {
+    return 0;
+  }
+  //exec...文字列から正規表現にマッチする部分を検索するメソッド
+  // result はこんな感じのもの👇
+  // result[0] → マッチした文字列（例: "ab"）
+  // result.index → 何文字目で見つかったか（例: 2）
+  // result.input → 元の文字列（例: "zzabyyab"）
+  let match;
+  while ((match = regex.exec(s1)) !== null) {
+    count++;
+  }
+  return count;
 }
 
 /**
@@ -52,7 +77,10 @@ function countStr(s1, s2) {
  *
  */
 
+// join()...配列の要素を順番にくっつけて 1つの文字列にする
 function isPalindrome(str) {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
 }
 
 /**
@@ -69,7 +97,16 @@ function isPalindrome(str) {
  *    11 => True
  *
  */
+//平方根を使う方法もあるが、難しい！
 function isPrime(num) {
+  if (num < 2) return false; // 0,1は素数じゃない
+
+  for (let i = 2; i <= num - 1; i++) {
+    if (num % i === 0) {
+      return false; // 割り切れたら素数じゃない
+    }
+  }
+  return true; // 最後まで割り切れなかったら素数
 }
 
 /**
@@ -88,6 +125,15 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 4) {
+      i++; // 次の数字をスキップ
+    } else {
+      total += array[i];
+    }
+  }
+  return total;
 }
 
 module.exports = {
