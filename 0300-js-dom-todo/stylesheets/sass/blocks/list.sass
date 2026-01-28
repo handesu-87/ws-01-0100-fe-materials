@@ -1,0 +1,82 @@
+@charset "utf-8"
+@use '../shared/_base.sass' as b
+
+.list
+    padding: 32px
+
+.list__setting
+    padding: 16px
+    margin-bottom: 32px
+    display: flex
+    justify-content: flex-end
+
+.list__header
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #f0f0f0
+    font-size: 12px
+
+.list__header-item
+    flex: 1
+    padding: 8px 16px
+    border-right: 1px solid #f0f0f0
+    font-size: 12px
+
+.list__header-item--name
+    flex: 4
+
+.list__item
+    display: flex
+    align-items: center
+    width: 100%
+    border-bottom: 1px solid #f0f0f0
+    transition: opacity .8s
+
+.list__item-col
+    box-sizing: border-box
+    flex: 1
+    padding: 16px
+    border-right: 1px solid #f0f0f0
+
+.list__item-col--checkbox
+    display: flex
+    justify-content: center
+
+.checkbox
+    -webkit-appearance: none
+    appearance: none
+    display: block
+    border-radius: 50%
+    border: 1px solid #c6c6c6
+    padding: 4px
+    height: 26px
+    width: 26px
+    cursor: pointer
+    color: #fefefe
+    display: flex
+    justify-content: center
+    align-items: center
+
+.checkbox__input
+    border: 0
+    appearance: none
+    position: absolute
+
+.list__item-col--name
+    cursor: pointer
+    flex: 4
+
+.list__item-col--deadline
+    cursor: pointer
+
+.list__item-col--actions
+    font-size: 12px
+    display: flex
+    justify-content: center
+
+.icon
+    color: #666
+    cursor: pointer
+
+.icon--check
+    color: #fefefe

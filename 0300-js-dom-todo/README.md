@@ -1,3 +1,64 @@
+# 課題めも
+
+## CSS 属性セレクタの `i` について
+
+### 書き方
+
+```css
+input[type="checkbox" i]
+```
+
+### `i` の意味
+
+- **case-insensitive（大文字・小文字を区別しない）** という指定
+- 属性値の比較を「大文字・小文字無視」で行う
+
+### マッチする例
+
+```html
+<input type="checkbox" />
+<input type="CHECKBOX" />
+<input type="CheckBox" />
+```
+
+上記すべてにマッチする。
+
+### なぜ使われる？
+
+- HTMLの `type` 属性は **仕様上 大文字・小文字を区別しない**
+- CSSは通常、文字列を厳密比較するため
+- 表記ゆれや古いコードにも対応するために
+  **リセットCSSやライブラリで安全策として使われる**
+
+### 実務での使い分け
+
+- 普段の開発：
+
+```css
+input[type="checkbox"]
+```
+
+→ ほぼ問題なし
+
+- ライブラリ / 汎用CSS / リセットCSS：
+
+```css
+input[type="checkbox" i]
+```
+
+→ より堅牢で安全
+
+### 補足
+
+- `i` は CSS Selectors Level 4 の機能
+- 主要ブラウザではすでに対応済み
+- `i` = ignore case と覚えるとわかりやすい
+
+ら
+`s`（case-sensitive）」との比較メモ
+ェックボックスカスタムCSS例とセットのmd
+
+に整理するよ。
 
 # HTML, CSS(SASS), JavaScript DOM操作の課題
 
@@ -11,8 +72,7 @@
 
 課題に取り組む前にnode.jsのインストールが必要です。下記記事にしたがってインストールをしてください。
 
-- [nvm +  Node.js + npmのインストール - Qiita](https://qiita.com/sansaisoba/items/242a8ba95bf70ba179d3#mac%E3%81%AE%E5%A0%B4%E5%90%88)
-
+- [nvm + Node.js + npmのインストール - Qiita](https://qiita.com/sansaisoba/items/242a8ba95bf70ba179d3#mac%E3%81%AE%E5%A0%B4%E5%90%88)
 
 ## 課題で身に着けること
 
@@ -45,16 +105,15 @@
 #### 1. 留意事項を確認する
 
 1. 既存のjs ファイルを活用して課題を進める。
-    - function.js メインの処理を記述するファイル。
-    - lib.js function.js から使用するクラス・関数を記述したファイル。原則こちらのファイルの編集は不要。
+   - function.js メインの処理を記述するファイル。
+   - lib.js function.js から使用するクラス・関数を記述したファイル。原則こちらのファイルの編集は不要。
 1. JavaScriptでのイベントの実装はaddEventListenerを利用することhtml内でのイベントの登録は行わない。
-    - [EventTarget.addEventListener() - Web APIs | MDN](https://developer.mozilla.org/ja/docs/Web/API/EventTarget/addEventListener)
+   - [EventTarget.addEventListener() - Web APIs | MDN](https://developer.mozilla.org/ja/docs/Web/API/EventTarget/addEventListener)
 1. htmlのDOMに直接スタイルをあてない、またはjsでDOMのスタイルを書き換えるのではなく、クラスを付与することでスタイルを変化させること。
 1. 関数型プログラミングの考え方にのっとって、状態と振る舞いを分離させること
 1. 成果物はGithub Pagesにて公開する。(gh-pagesブランチをつくってPUSHするだけ）
 1. cssのスタイルはSASS記法でBEMの考えに則って実装する
 1. 上記ルールに則りながら必要に応じて自分でファイルを追加・編集する
-
 
 #### 2. sassのコンパイル
 
@@ -71,6 +130,5 @@ npm run compile:css
 作業が終わったら変更をコミット & pushしてリモートリポジトリ に変更を反映させます。 masterへの変更が終わったら下記手順でサイトをgithub ページ上に公開してください。
 
 https://docs.github.com/ja/pages/getting-started-with-github-pages/creating-a-github-pages-site
-
 
 ### FAQ
