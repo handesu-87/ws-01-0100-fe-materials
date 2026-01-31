@@ -19,8 +19,10 @@ const state = {
 
 // ↓↓↓ ここを実装
 
-function renderTasks(arr) {
-  /*
+function renderTasks(container) {
+  container.innerHTML = "";
+  state.tasks.forEach((task) => {
+    /*
     - li
       - div.checkbox
         - label.checkbox
@@ -31,13 +33,44 @@ function renderTasks(arr) {
       - div.list__item-col--actions
         - i
     */
-  arr.forEach((task) => {
-    const checkbox = checkbox(false, (checked) => {
-      console.log("今の状態:", checked);
-      //タスクが完了したときの処理
+
+    //各要素を生成
+    //チェックボックス
+    const checkboxWrapper = div("list__item-col list__item-col--checkbox");
+    checkboxWrapper.appendChild(
+      checkbox(false, () => {
+        //チェックボックスがチェックされた時の処理
+        console.log("チェックされました");
+        // .list__item--completed-dismissingクラスを付与する
+        checkbox.classList.add("list__item--completed-dismissing");
+      }),
+    );
+
+    // tasks.name
+    const taskName = div("list__item-col list__item-col--name");
+    taskName.innerText = task.name;
+
+    // tasks.deadline
+    const taskDead = div("list__item-col list__item-col--deadline");
+    taskDead.innerText = task.deadline;
+
+    // ゴミ箱アイコン
+    const actions = div("list__item-col list__item-col--actions");
+    const i = icon("icon icon--trash fa-solid fa-trash", () => {
+      // ゴミ箱がクリックされた時の処理
+      console.log("ゴミ箱がクリックされました");
     });
+    actions.appendChild(i);
+
+    // liに要素を追加
     const li = document.createElement("li");
     li.classList.add("list__item");
+    li.appendChild(checkboxWrapper);
+    li.appendChild(taskName);
+    li.appendChild(taskDead);
+    li.appendChild(actions);
+
+    container.appendChild(li);
   });
 }
 
@@ -56,7 +89,7 @@ function onSubmitTask(container) {
     return;
   }
 
-  //stateのtasksにオブジェクトを追加する
+  //state.tasksにオブジェクトを追加
   state.tasks.push({
     name,
     deadline,
@@ -66,9 +99,10 @@ function onSubmitTask(container) {
     console.log(element);
   });
 
-  // state.tasksを描画する
-  renderTasks(state.tasks);
+  // リストの見た目を更新
+  renderTasks(container);
 
+  //フォームを初期状態に戻す
   form.reset();
 }
 

@@ -49,6 +49,7 @@ class AppDate {
 
 // components
 
+// class名 = klass のdivを生成
 function div(klass) {
   const div = document.createElement("div");
   div.setAttribute("class", klass);
@@ -56,6 +57,7 @@ function div(klass) {
   return div;
 }
 
+// iを生成
 function icon(klass, onClick) {
   const i = document.createElement("i");
   i.setAttribute("class", klass);
@@ -64,6 +66,7 @@ function icon(klass, onClick) {
   return i;
 }
 
+// ボタンを生成
 function button(text, klass, onClick) {
   const button = document.createElement("button");
   button.setAttribute("class", `button ${klass}`);
@@ -73,6 +76,7 @@ function button(text, klass, onClick) {
   return button;
 }
 
+// チェックボックスを生成
 function checkbox(checked, onClick) {
   const label = document.createElement("label");
   label.setAttribute("class", "checkbox");
