@@ -21,7 +21,14 @@ const state = {
 
 function renderTasks(container) {
   container.innerHTML = "";
-  state.tasks.forEach((task) => {
+
+  //state.tasks.deadlineの順にソートする
+  const sortedTasks = [...state.tasks].sort(
+    (a, b) => a.deadline.getTime() - b.deadline.getTime(),
+  );
+  console.log(sortedTasks);
+
+  sortedTasks.forEach((task) => {
     /*
     - li
       - div.checkbox
@@ -38,11 +45,9 @@ function renderTasks(container) {
     //チェックボックス
     const checkboxWrapper = div("list__item-col list__item-col--checkbox");
     checkboxWrapper.appendChild(
-      checkbox(false, () => {
-        //チェックボックスがチェックされた時の処理
-        console.log("チェックされました");
-        // .list__item--completed-dismissingクラスを付与する
-        checkbox.classList.add("list__item--completed-dismissing");
+      checkbox(false, (checked) => {
+        console.log("今の状態:", checked);
+        //checkedがtrueなら消す
       }),
     );
 
@@ -72,6 +77,8 @@ function renderTasks(container) {
 
     container.appendChild(li);
   });
+
+  //完了済みのタスクを appearance:none にする
 }
 
 function onSubmitTask(container) {
@@ -93,10 +100,6 @@ function onSubmitTask(container) {
   state.tasks.push({
     name,
     deadline,
-  });
-
-  state.tasks.forEach((element) => {
-    console.log(element);
   });
 
   // リストの見た目を更新
