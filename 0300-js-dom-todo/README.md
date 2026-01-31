@@ -54,11 +54,10 @@ input[type="checkbox" i]
 - 主要ブラウザではすでに対応済み
 - `i` = ignore case と覚えるとわかりやすい
 
-ら
-`s`（case-sensitive）」との比較メモ
-ェックボックスカスタムCSS例とセットのmd
+## staticメソッドの呼び出しについて
 
-に整理するよ。
+内部関数は `new`したら呼べる。
+static メソッドは`new`しなくても`クラス名.メソッド()`で呼べる。
 
 # HTML, CSS(SASS), JavaScript DOM操作の課題
 

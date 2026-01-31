@@ -1,10 +1,15 @@
 // date class
 class AppDate {
+  //deadline(string型) -> Int型(10進数) -> Dateオブジェクトに変換
   static parse(dateString) {
     if (!dateString) {
       return;
     }
 
+    // sample...const [y, m, d] = [2026, 2, 5];
+    // const y = 2026;
+    // const m = 2;
+    // const d = 5;
     const [year, month, day] = dateString
       .split("-")
       .map((str) => parseInt(str, 10));
